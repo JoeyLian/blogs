@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>图的树分解 | OneTime</title><meta name="keywords" content="NP,树分解,图问题"><meta name="author" content="Joey Lian"><meta name="copyright" content="Joey Lian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="树分解是图子式理论中发展起来的一个重要概念。图的树分解由于其本身的特性使得它在算法设计中有着极其重要的意义。 引入–树上的独立集问题树上的独立集问题–贪心算法首先，我们证明： 定理: 如果 $T&#x3D;(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。 证明: 考虑最大独立集 $S$, 设 $e&#x3D;(u,v)$ 是唯一与 $v$ 相连的边。显然">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>图的树分解 | OneTime</title><meta name="keywords" content="NP,树分解,图问题"><meta name="author" content="Joey Lian"><meta name="copyright" content="Joey Lian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="树分解是图子式理论中发展起来的一个重要概念。图的树分解由于其本身的特性使得它在算法设计中有着极其重要的意义。 引入–树上的独立集问题树上的独立集问题–贪心算法首先，我们证明： 定理: 如果 $T&#x3D;(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。 证明: 考虑最大独立集 $S$, 设 $e&#x3D;(u,v)$ 是唯一与 $v$ 相连的边。显然，$u$ 与 $v$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图的树分解">
 <meta property="og:url" content="http://joeylian.github.io/blogs/2020/06/30/2020-06-30-%E5%9B%BE%E7%9A%84%E6%A0%91%E5%88%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="OneTime">
-<meta property="og:description" content="树分解是图子式理论中发展起来的一个重要概念。图的树分解由于其本身的特性使得它在算法设计中有着极其重要的意义。 引入–树上的独立集问题树上的独立集问题–贪心算法首先，我们证明： 定理: 如果 $T&#x3D;(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。 证明: 考虑最大独立集 $S$, 设 $e&#x3D;(u,v)$ 是唯一与 $v$ 相连的边。显然">
+<meta property="og:description" content="树分解是图子式理论中发展起来的一个重要概念。图的树分解由于其本身的特性使得它在算法设计中有着极其重要的意义。 引入–树上的独立集问题树上的独立集问题–贪心算法首先，我们证明： 定理: 如果 $T&#x3D;(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。 证明: 考虑最大独立集 $S$, 设 $e&#x3D;(u,v)$ 是唯一与 $v$ 相连的边。显然，$u$ 与 $v$">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://joeylian.github.io/blogs/2020/06/30/2020-06-30-%E5%9B%BE%E7%9A%84%E6%A0%91%E5%88%86%E8%A7%A3/AlgDesign.png">
 <meta property="article:published_time" content="2020-06-29T16:00:00.000Z">
@@ -151,67 +151,67 @@
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blogs/img/me.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/blogs/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blogs/tags/"><div class="headline">标签</div><div class="length-num">57</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blogs/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blogs/2020/06/30/2020-06-30-%E5%9B%BE%E7%9A%84%E6%A0%91%E5%88%86%E8%A7%A3/top.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blogs/">OneTime</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 总览</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">图的树分解<a class="post-edit-link" href="https://github.com/JoeyLian/githubio/edit/master/source/_posts/2020-06-30-图的树分解.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-06-29T16:00:00.000Z" title="发表于 2020-06-30 00:00:00">2020-06-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-01T05:56:03.041Z" title="更新于 2025-04-01 13:56:03">2025-04-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blogs/categories/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/">算法设计</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="图的树分解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/blogs/2020/06/30/2020-06-30-%E5%9B%BE%E7%9A%84%E6%A0%91%E5%88%86%E8%A7%A3/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>树分解是图子式理论中发展起来的一个重要概念。图的树分解由于其本身的特性使得它在算法设计中有着极其重要的意义。</p>
 <h2 id="引入–树上的独立集问题"><a href="#引入–树上的独立集问题" class="headerlink" title="引入–树上的独立集问题"></a>引入–树上的独立集问题</h2><h3 id="树上的独立集问题–贪心算法"><a href="#树上的独立集问题–贪心算法" class="headerlink" title="树上的独立集问题–贪心算法"></a>树上的独立集问题–贪心算法</h3><p>首先，我们证明：</p>
-<p><strong>定理:</strong> 如果 $T&#x3D;(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。</p>
-<p>证明: 考虑最大独立集 $S$, 设 $e&#x3D;(u,v)$ 是唯一与 $v$ 相连的边。显然，$u$ 与 $v$ 至少有一个在 $S$ 中：否则，可以把 $v$ 加入 $S$，使 $S$ 变大。如果 $v\in S$，定理成立；如果 $u\in S$，则从 S 中删除 $u$ 插入 $v$，可以得到一个相同大小的独立集。</p>
+<p><strong>定理:</strong> 如果 $T=(V,E)$ 是一棵树，$v$ 是 $T$ 的一片叶子，那么存在包含 $v$ 的最大独立集。</p>
+<p>证明: 考虑最大独立集 $S$, 设 $e=(u,v)$ 是唯一与 $v$ 相连的边。显然，$u$ 与 $v$ 至少有一个在 $S$ 中：否则，可以把 $v$ 加入 $S$，使 $S$ 变大。如果 $v\in S$，定理成立；如果 $u\in S$，则从 S 中删除 $u$ 插入 $v$，可以得到一个相同大小的独立集。</p>
 <p>因此，我们可以通过选择树中的叶节点，删除与它关联的顶点和边，来获得树的最大独立集。删除叶节点的父节点后树可能会变得不连通，只需要对得到的森林分别进行相同的算法。</p>
-<p><img src="/blogs/image-20200630135548997.png" alt="image-20200630135548997"></p>
+<p><img src="image-20200630135548997.png" alt="image-20200630135548997"></p>
 <p>这个贪心算法可以解决在一般图上的 NP-hard 问题。</p>
 <p>此外，对于一般图，当图中存在叶节点时，这个定理也是成立的。当在解决独立集问题时，可以启发式地允许这个算法直至找不到一个叶节点，从而缩小图的规模使后续的算法更容易进行。</p>
 <h3 id="树上的最大权独立集–动态规划"><a href="#树上的最大权独立集–动态规划" class="headerlink" title="树上的最大权独立集–动态规划"></a>树上的最大权独立集–动态规划</h3><p>对于树上的最大权独立集问题，可以用动态规划求解：</p>
-<p>用 $\text{OPT} _ {in}(u)$ 表示子树 $T_u$ 包含 $u$ 的独立集最大权, 用 $\text{OPT} _ {out}(u)$ 表示子树 $T_u$ 不包含 $u$ 的独立集最大权，有：<br>$$<br>\text{OPT}_ {in}(u) &#x3D; \omega _ u + \sum_{v\in \text{children}(u)} \text{OPT} _ {out}(v)<br>$$</p>
-<p>$$ \text{OPT} _ {out}(u) &#x3D;  \sum_{v\in \text{children}(u)} \max(\text{OPT} _ {out}(v),\text{OPT} _ {in}(v)) $$</p>
+<p>用 $\text{OPT} _ {in}(u)$ 表示子树 $T_u$ 包含 $u$ 的独立集最大权, 用 $\text{OPT} _ {out}(u)$ 表示子树 $T_u$ 不包含 $u$ 的独立集最大权，有：<br>$$<br>\text{OPT}_ {in}(u) = \omega _ u + \sum_{v\in \text{children}(u)} \text{OPT} _ {out}(v)<br>$$</p>
+<p>$$ \text{OPT} _ {out}(u) =  \sum_{v\in \text{children}(u)} \max(\text{OPT} _ {out}(v),\text{OPT} _ {in}(v)) $$</p>
 <p>因此，我们可以用动态规划的方法求解树上的最大权独立集问题。</p>
-<p><img src="/blogs/image-20200630135524453.png" alt="image-20200630135524453"></p>
+<p><img src="image-20200630135524453.png" alt="image-20200630135524453"></p>
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>定性的理解，当图是树型结构时，考虑节点 $v$, $v$ 结点将树分为两部分：以 $v$ 为根节点的子树和其余部分。两个部分之间的影响只会通过节点 $v$ 传递。因此，通过考虑节点 $v$ 在解中出现的不同方式，可以将子树的问题与其余部分的问题分开，独立解决。</p>
 <p>我们可以希望图有一个弱一点的性质：可以用小的结点集合递归地将图切开，使得切开的多个部分不会有相互影响。</p>
 <h2 id="树宽的定义"><a href="#树宽的定义" class="headerlink" title="树宽的定义"></a>树宽的定义</h2><h3 id="树分解的定义"><a href="#树分解的定义" class="headerlink" title="树分解的定义"></a>树分解的定义</h3><p>看下面这个图，(a) 和 (b) 同一个图的两种画法，通过 (b) 可以看出图中的边是由十个三角形组出。(c) 说明了这 10 个三角形是如何连接的，它看起来是树型的。</p>
-<p><img src="/blogs/image-20200630143527745.png" alt="image-20200630143527745"></p>
+<p><img src="image-20200630143527745.png" alt="image-20200630143527745"></p>
 <p>为了精确地表达这种性质，我们定义图的树分解：</p>
-<p>$G&#x3D;(V,E) $ 的树分解由树 $T$ 和片段集 ${V_t, t\in T}$ 组成，其中$V_t\subseteq V$ 是图的顶点集的子集。树 $T$ 和片段集 ${V_t, t\in T}$ 满足：</p>
+<p>$G=(V,E) $ 的树分解由树 $T$ 和片段集 ${V_t, t\in T}$ 组成，其中$V_t\subseteq V$ 是图的顶点集的子集。树 $T$ 和片段集 ${V_t, t\in T}$ 满足：</p>
 <ul>
 <li>(顶点覆盖)  $G$ 的每一个顶点至少属于一个片段 $V_t$ </li>
 <li>(边覆盖) 对 $G$ 的每一条边 $e$，存在一个片段 $V_t$ 包含 $e$ 的两个端点</li>
-<li>(一致性) 设 $t_1$, $t_2$ 和 $t_3$ 是 $T$ 的 3 个顶点， $t_2$ 在 $t_1$ 到 $t_3$ 的路径上，如果 $G$ 的顶点 $v$ 属于 $V_{t_1}$ 和 $V_{t_3}$，则它也属于 $V_{t_2}$</li>
+<li>(一致性) 设 $t_1$, $t_2$ 和 $t_3$ 是 $T$ 的 3 个顶点， $t_2$ 在 $t_1$ 到 $t_3$ 的路径上，如果 $G$ 的顶点 $v$ 属于 $V_{t_1}$ 和 $V_{t_3}$，则它也属于 $V_{t_2}$  </li>
 </ul>
 <p>可以验证，用10个三角形作为片段，图 (c) 中的树是 (a,b) 中图的树分解。</p>
 <h3 id="树分解的性质"><a href="#树分解的性质" class="headerlink" title="树分解的性质"></a>树分解的性质</h3><p><strong>定理 1:</strong> 假设 $T-t$ 有分支 $T_1, …, T_d$，那么子图 $G_{T_1}-V_t, G_{T_2}-V_t, …, G_{T_d}-V_t $ 没有共同的结点，且它们之间没有边。</p>
-<p><img src="/blogs/image-20200630161045228.png" alt="image-20200630161045228"></p>
+<p><img src="image-20200630161045228.png" alt="image-20200630161045228"></p>
 <p><strong>定理 2:</strong> 设 $X$ 和 $Y$ 是删去边 $(x,y)$ 后 $T$ 的两个分支，那么从 $V$ 中删去集合 $V_x\cap V_y$ 把 $G$ 拆分成两个子图 $G_X-(V_x\cap V_y)$ 和 $G_Y-(V_x\cap V_y)$，这两个子图没有共同的顶点，并且没有一条边的两个端点分别在这两个子图中。</p>
-<p><img src="/blogs/image-20200630161814372.png" alt="image-20200630161814372"></p>
+<p><img src="image-20200630161814372.png" alt="image-20200630161814372"></p>
 <p>非冗余的树分解：不存在边 $(x,y)$ 使得 $V_x \subseteq V_y$。可以将冗余的树分解逐步合并得到一个非冗余的树分解。</p>
 <p><strong>定理 3</strong>: $n$ 个顶点的图的任意非冗余的树分解最多有 $n$ 个片段。</p>
 <p>证明: 对于 $T$ 上的叶子 $t$， $V_t$ 中至少有一个结点不在其他片段中出现。</p>
 <h3 id="树宽的定义-1"><a href="#树宽的定义-1" class="headerlink" title="树宽的定义"></a>树宽的定义</h3><p>我们定义树分解 $(T,{V_t})$ 的宽度为所有片段 $V_t$ 的大小的最大值减 1</p>
-<p>$$<br>\text{width} (T,{V_t}) &#x3D; \max_t\vert V_t\vert -1<br>$$</p>
+<p>$$<br>\text{width} (T,{V_t}) = \max_t\vert V_t\vert -1<br>$$</p>
 <p>图 10.5 中的图树宽为 2.</p>
 <p><strong>定理</strong>: 连通图 $G$ 的树宽为 1 当且仅当它是树。</p>
 <h2 id="树分解上的动态规划"><a href="#树分解上的动态规划" class="headerlink" title="树分解上的动态规划"></a>树分解上的动态规划</h2><p>给定 $n$ 个顶点的图及其宽度为 $\omega$ 的树分解 $(T,{V_t})$，我们希望得到一个运行时间为 $O(f(\omega)\cdot n)$ 的算法，其中 $f(x)$ 是仅依赖于 $\omega$ 的指数函数，而与顶点数无关。</p>
 <p>一个想法是模拟树上的动态规划算法，从 $T$ 的叶节点向上考虑每个片段，对结点 $t$, 我们枚举 $V_t$ 与最优解可能的交集，即枚举 $V_t$ 的所有为独立集的子集，有 $2^{\omega +1}$ 种可能，在选取这些点的假设下对问题的其他部分进行求解。</p>
 <p>以最大权独立集为例，符号说明：</p>
 <ul>
-<li>为顶点集 $V$ 的子集 $V’$，用 $\omega(V’) $ 表示 $V’$ 中所有顶点的权重和，$\omega(V’) &#x3D; \sum_{v\in V’} \omega_v$ </li>
+<li>为顶点集 $V$ 的子集 $V’$，用 $\omega(V’) $ 表示 $V’$ 中所有顶点的权重和，$\omega(V’) = \sum_{v\in V’} \omega_v$ </li>
 <li>确定树 $T$ 的根节点 $r$，对任意的顶点 $t$, 用 $T_t$ 表示以 $t$ 为根节点的子树， $G_t$ 表示 $T_t$ 中所有顶点对应的片段中的顶点构成的 $G$ 的子图。</li>
 <li>对 $T$ 中的顶点 $t$，用 $t_1,…,t_d$ 表示 $t$ 的子节点</li>
 <li>算法中， $U$ 表示 $t$ 对应的片段 $V_t$ 与最优解可能的交集， $U_i$ 表示 $t$ 的子节点 $t_i$ 对应的片段 $V_{t_i}$ 与最优解可能的交集</li>
 <li>$f_t(U)$ 表示当 $t$ 对应的片段 $V_t$ 中选择了 $U$ 这个子集时，以 $t$ 为根节点的子树 $T_t$ 的最优解的权重; 同样的，$f_{t_i}(U_i)$ 表示子树 $T_{t_i}$ 选择 $U_i$ 时的最优解的权重</li>
 </ul>
 <p>$f_t(U)$ 由递推式给出：</p>
-<p>$$<br>f_t(U) &#x3D; \omega(U) + \sum_{i&#x3D;1}^d \max_{U_i} \{f_{t_i}(U_i)-\omega(U_i\cap U): U_i \cap V_t &#x3D; U\cap V_{t _ i} 且 U_i\subseteq V_{t_i} 是独立集\}<br>$$</p>
-<p>其中，$U_i \cap V_t &#x3D; U\cap V_{t_i}$ 保证了不会出现同时在两个片段中的顶点在 $U$ 中选中而没有出现在 $U_i$ 中的情况。动态规划的算法为：</p>
-<p><img src="/blogs/image-20200701160935623.png" alt="image-20200701160935623"></p>
+<p>$$<br>f_t(U) = \omega(U) + \sum_{i=1}^d \max_{U_i} \{f_{t_i}(U_i)-\omega(U_i\cap U): U_i \cap V_t = U\cap V_{t _ i} 且 U_i\subseteq V_{t_i} 是独立集\}<br>$$</p>
+<p>其中，$U_i \cap V_t = U\cap V_{t_i}$ 保证了不会出现同时在两个片段中的顶点在 $U$ 中选中而没有出现在 $U_i$ 中的情况。动态规划的算法为：</p>
+<p><img src="image-20200701160935623.png" alt="image-20200701160935623"></p>
 <p>可以得到算法的时间复杂度为 $O(4^{\omega+1}\omega n)$</p>
 <h2 id="构造树分解"><a href="#构造树分解" class="headerlink" title="构造树分解"></a>构造树分解</h2><p>确定一个图的树宽是 NP-hard 的，但我们可以得到一个算法：给定图 $G$ 和树宽 $\omega$, 算法在 $O(f(\omega) \cdot mn)$ 时间内得到一个宽度小于 $4\omega$ 的树分解，或返回图 $G$ 不存在树宽小于 $\omega$ 的树分解的结论。（也就是一个近似比为 4 的算法）</p>
 <p>首先，我们希望可以得到一种结构，如果图中存在这种结构，则不可能存在小的树宽。我们提出下面的定义：</p>
 <ul>
-<li>可分离的：给定两个大小相同的集合，存在一个严格比他们小的集合使它们完全不连接，则称这两个集合是可分离的。也就是说, 对 $Y,Z\subseteq V$, 存在 $S\subset V, \vert S\vert &lt; \vert Y\vert &#x3D; \vert Z\vert$ 且 $G-S $ 中没有从 $Y-S $ 到 $Z-S$ 的路径，则称 $Y,Z$ 是可分离的</li>
-<li>$\omega-$连接：$G$ 中的节点集 $X$, 如果 $\vert X\vert \ge \omega$ 且 $X$ 不包含可分离子集 $\vert Y\vert &#x3D; \vert Z\vert \le \omega $</li>
+<li>可分离的：给定两个大小相同的集合，存在一个严格比他们小的集合使它们完全不连接，则称这两个集合是可分离的。也就是说, 对 $Y,Z\subseteq V$, 存在 $S\subset V, \vert S\vert &lt; \vert Y\vert = \vert Z\vert$ 且 $G-S $ 中没有从 $Y-S $ 到 $Z-S$ 的路径，则称 $Y,Z$ 是可分离的</li>
+<li>$\omega-$连接：$G$ 中的节点集 $X$, 如果 $\vert X\vert \ge \omega$ 且 $X$ 不包含可分离子集 $\vert Y\vert = \vert Z\vert \le \omega $ </li>
 </ul>
-<p><strong>定理</strong>: 设 $G&#x3D;(V,E)$ 有 $m$ 条边，$X$ 是 $G$ 中 $k$ 个顶点的集合，$\omega\le k$  给定，可以在 $O(f(k)\cdot \omega)$ 内确定 $X$ 是否是 $\omega-$连接的，如果不是，则可以得到 $\vert Y\vert &#x3D; \vert Z\vert \le \omega$ 被集合 $S$ 分离。</p>
-<p>证明: 只需遍历 $X$ 的所有子集对。对每对子集 $Y$, $Z$，它们可分离当且仅当不存在 $\vert Y\vert &#x3D; \vert Z\vert$ 条顶点不交的路径，其中每条路径的一个端点在 $Y$ 中，另一个端点在 $Z$ 中。这个问题是一个带顶点容量的无向图最大流问题。</p>
+<p><strong>定理</strong>: 设 $G=(V,E)$ 有 $m$ 条边，$X$ 是 $G$ 中 $k$ 个顶点的集合，$\omega\le k$  给定，可以在 $O(f(k)\cdot \omega)$ 内确定 $X$ 是否是 $\omega-$连接的，如果不是，则可以得到 $\vert Y\vert = \vert Z\vert \le \omega$ 被集合 $S$ 分离。</p>
+<p>证明: 只需遍历 $X$ 的所有子集对。对每对子集 $Y$, $Z$，它们可分离当且仅当不存在 $\vert Y\vert = \vert Z\vert$ 条顶点不交的路径，其中每条路径的一个端点在 $Y$ 中，另一个端点在 $Z$ 中。这个问题是一个带顶点容量的无向图最大流问题。</p>
 <p><strong>定理</strong>:   如果 $G$ 包含不小于 $3\omega$ 的 $(\omega+1)-$连接集，则 $G$ 的树宽大于等于 $\omega$</p>
 <p>详细证明见书。直观的理解，树宽小于 $\omega$ 会有大小小于等于 $(\omega+1)$ 的片段将集合分离，因此不可能存在 $(\omega+1)-$连接集。</p>
 <h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>构造树分解算法的直观是从第一个片段开始，希望剩余的部分被分为不连接的分支，递归地进入每个分支，加入新的片段进一步引起图的分裂，直到得到最后的片段。</p>
-<p><img src="/blogs/image-20200701175320969.png" alt="image-20200701175320969"></p>
+<p><img src="image-20200701175320969.png" alt="image-20200701175320969"></p>
 <p>用 $U\subseteq V$ 表示 $G$ 中属于已构造好的片段的顶点集合，此时，树 $T$ 与片段集 ${V_t}$ 构成了 $U$ 的一个树分解。</p>
 <p>设 $C$ 是 $G-U$ 的一个连通分支，$u\in U$，如果存在一个顶点 $v\in C$ 有一条边与 $u$ 相连，则称 $u$ 是 $C$ 的一个邻点。算法保证</p>
 <ul>
@@ -220,10 +220,10 @@
 <p>算法保证在树分解中添加新顶点与新片段，满足上述条件的同时 $U$ 至少增加一个顶点，从而最多进行 $n$ 次迭代，结束时得到图 $G$ 的树分解。</p>
 <p>设 $C$ 是 $G-U$ 的任意一个连通分支，$X$ 是 $U$ 中 $C$ 的邻点集。则 $X$ 最多有 $3\omega$ 个顶点，且存在一个片段 $V_t$ 包含整个$X$ 。</p>
 <ul>
-<li><p>若 $\vert X\vert &lt; 3\omega$， 对 $C$ 中的任意顶点 $v$ ,  定义新的片段 $V_s &#x3D; X\cup {v}$，$T$ 中新的顶点 $s$ 是 $t$ 的子节点，可以证明此时得到的部分树分解仍满足条件，且 $U$ 增加一个顶点</p>
+<li><p>若 $\vert X\vert &lt; 3\omega$， 对 $C$ 中的任意顶点 $v$ ,  定义新的片段 $V_s = X\cup {v}$，$T$ 中新的顶点 $s$ 是 $t$ 的子节点，可以证明此时得到的部分树分解仍满足条件，且 $U$ 增加一个顶点</p>
 </li>
-<li><p>若 $\vert X\vert &#x3D; 3\omega$，首先检查 $X$ 是不是  $(\omega+1)-$连接集。如果是，则算法返回 $G$ 的树宽大于等于 $\omega$。如果 $X$ 不是  $(\omega+1)-$连接集，则得到集合 $Y,Z\subseteq X, S\subseteq V$ 满足 $\vert S\vert &lt;\vert Y\vert &#x3D; \vert Z\vert \le \omega +1$ 且在 $G-S $ 中没有从 $Y-S $ 到 $Z-S$ 的路径。</p>
-<p>记 $S’ &#x3D; S\cap(Y\cup Z\cup C)$ ，定义一个新片段 $V_s &#x3D; X\cup S’$，$T$ 中新的顶点 $s$ 是 $t$ 的子节点，$\vert X\cup S’ \vert\le 3\omega + \omega &#x3D; 4\omega$ ，满足条件； $S’\cap C$ 非空， $U$ 至少增加一个顶点；下面还需证明 $C$ 最多有 $3\omega$ 个邻点：</p>
+<li><p>若 $\vert X\vert = 3\omega$，首先检查 $X$ 是不是  $(\omega+1)-$连接集。如果是，则算法返回 $G$ 的树宽大于等于 $\omega$。如果 $X$ 不是  $(\omega+1)-$连接集，则得到集合 $Y,Z\subseteq X, S\subseteq V$ 满足 $\vert S\vert &lt;\vert Y\vert = \vert Z\vert \le \omega +1$ 且在 $G-S $ 中没有从 $Y-S $ 到 $Z-S$ 的路径。</p>
+<p>记 $S’ = S\cap(Y\cup Z\cup C)$ ，定义一个新片段 $V_s = X\cup S’$，$T$ 中新的顶点 $s$ 是 $t$ 的子节点，$\vert X\cup S’ \vert\le 3\omega + \omega = 4\omega$ ，满足条件； $S’\cap C$ 非空， $U$ 至少增加一个顶点；下面还需证明 $C$ 最多有 $3\omega$ 个邻点：</p>
 <p>原来的分支 $C$ 可能被分解为多个分支 $C’\subseteq C, C’\subseteq G-(U\cup S’)$ ，每一个分支 $C’$ 的邻点都在 $X\cup S’$ 中，我们可以证明所有的邻点都在 $(X-Z)\cup S’$ 或 $(X-Y)\cup S’$ 中，这两个子集都小于 $3\omega$, 否则， $G-S $ 中存在一条从 $Y-S $ 到 $Z-S$ 的路径，矛盾。</p>
 </li>
 </ul>

@@ -158,7 +158,7 @@
 <li>规则集</li>
 </ul>
 <p>语法例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;program&gt; → &lt;stmts&gt; </span><br><span class="line">&lt;stmts&gt; → &lt;stmt&gt; | &lt;stmt&gt; ; &lt;stmts&gt; </span><br><span class="line">&lt;stmt&gt; → &lt;var&gt; = &lt;expr&gt; </span><br><span class="line">&lt;var&gt; → a | b | c | d </span><br><span class="line">&lt;expr&gt; → &lt;term&gt; + &lt;term&gt; | &lt;term&gt; - &lt;term&gt; </span><br><span class="line">&lt;term&gt; → &lt;var&gt; | <span class="type">const</span> </span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;program&gt; → &lt;stmts&gt; </span><br><span class="line">&lt;stmts&gt; → &lt;stmt&gt; | &lt;stmt&gt; ; &lt;stmts&gt; </span><br><span class="line">&lt;stmt&gt; → &lt;var&gt; = &lt;expr&gt; </span><br><span class="line">&lt;var&gt; → a | b | c | d </span><br><span class="line">&lt;expr&gt; → &lt;term&gt; + &lt;term&gt; | &lt;term&gt; - &lt;term&gt; </span><br><span class="line">&lt;term&gt; → &lt;var&gt; | <span class="keyword">const</span> </span><br></pre></td></tr></table></figure>
 
 <p>其中： <code>&lt;program&gt;</code>  是起始符号 ; <code>a, b, c, const,+,-,;,=</code> 是终结符</p>
 <ul>
@@ -169,7 +169,7 @@
 <p><strong>最左推导</strong>是指：被替换的非终结符总是前一个句型中最左边的非终结符。</p>
 <p>推导可能既不是最左也不是最右。</p>
 <p>最左推导的例子</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;program&gt; =&gt; &lt;stmts&gt;  </span><br><span class="line">          =&gt; &lt;stmt&gt; </span><br><span class="line">          =&gt; &lt;var&gt; = &lt;expr&gt;  </span><br><span class="line">          =&gt; a = &lt;expr&gt; </span><br><span class="line">          =&gt; a = &lt;term&gt; + &lt;term&gt;</span><br><span class="line">          =&gt; a = &lt;var&gt; + &lt;term&gt;</span><br><span class="line">          =&gt; a = b + &lt;term&gt;</span><br><span class="line">          =&gt; a = b + <span class="type">const</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;program&gt; =&gt; &lt;stmts&gt;  </span><br><span class="line">          =&gt; &lt;stmt&gt; </span><br><span class="line">          =&gt; &lt;var&gt; = &lt;expr&gt;  </span><br><span class="line">          =&gt; a = &lt;expr&gt; </span><br><span class="line">          =&gt; a = &lt;term&gt; + &lt;term&gt;</span><br><span class="line">          =&gt; a = &lt;var&gt; + &lt;term&gt;</span><br><span class="line">          =&gt; a = b + &lt;term&gt;</span><br><span class="line">          =&gt; a = b + <span class="keyword">const</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -178,7 +178,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">exp</span>&gt; → &lt;<span class="built_in">exp</span>&gt; + &lt;<span class="built_in">exp</span>&gt; </span><br><span class="line">      | &lt;<span class="built_in">exp</span>&gt; * &lt;<span class="built_in">exp</span>&gt; </span><br><span class="line">      | (&lt;<span class="built_in">exp</span>&gt;)  </span><br><span class="line">      | a | b | c</span><br></pre></td></tr></table></figure>
 
 <p>$a+b*c$ 两种不同的生成树</p>
-<p><img src="/blogs/image-20200114144736002.png" alt="image-20200114144736002"></p>
+<p><img src="image-20200114144736002.png" alt="image-20200114144736002"></p>
 <p>下面是三种消除歧义的语法修改：</p>
 <h3 id="优先级-Precedence"><a href="#优先级-Precedence" class="headerlink" title="优先级 Precedence"></a>优先级 Precedence</h3><p>运算符优先级“当评估顺序不完全由括号决定时适用”，每个运算符都有一个优先级，并且优先级较高的运算符在优先级较低的优先级之前执行，就像用括号括起来一样</p>
 <p>可以通过修改规则得到优先级：</p>
@@ -188,18 +188,18 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">exp</span>&gt; → &lt;<span class="built_in">exp</span>&gt; + &lt;<span class="built_in">exp</span>&gt; | &lt;mulexp&gt; </span><br><span class="line">&lt;mulexp&gt; → &lt;mulexp&gt; * &lt;mulexp&gt; | (&lt;<span class="built_in">exp</span>&gt;)| a | b | c</span><br></pre></td></tr></table></figure>
 
 <p>使得乘法拥有更高的优先级，对于 $a+b*c$ 只有一种生成树：</p>
-<p><img src="/blogs/image-20200114150407116.png" alt="image-20200114150407116"></p>
+<p><img src="image-20200114150407116.png" alt="image-20200114150407116"></p>
 <h3 id="结合性-Associativity"><a href="#结合性-Associativity" class="headerlink" title="结合性 Associativity"></a>结合性 Associativity</h3><p>当评估顺序不是由括号或优先级决定时适用</p>
 <ul>
 <li><p>左结合 (Left-associative) 运算符将操作数从左到右分组：</p>
-<p>$a + b + c + d &#x3D;((a + b)+ c)+ d$</p>
+<p>$a + b + c + d =((a + b)+ c)+ d$</p>
 </li>
 <li><p>右结合 (Right-associative) 运算符将操作数从右到左分组：</p>
-<p>$a + b + c + d &#x3D; a +(b +(c + d))$</p>
+<p>$a + b + c + d = a +(b +(c + d))$</p>
 </li>
 </ul>
 <p>在上面的语法中 $a+b+c$ 会产生两种生成树</p>
-<p><img src="/blogs/image-20200114150806038.png" alt="image-20200114150806038"></p>
+<p><img src="image-20200114150806038.png" alt="image-20200114150806038"></p>
 <p>左边生成树中 + 为右结合运算符；右边生成树中 + 为左结合运算符；</p>
 <p>可以通过修改规则得到指定的结合性：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">exp</span>&gt; → &lt;<span class="built_in">exp</span>&gt; + &lt;<span class="built_in">exp</span>&gt; | &lt;mulexp&gt; </span><br><span class="line">&lt;mulexp&gt; → &lt;mulexp&gt; * &lt;mulexp&gt; | (&lt;<span class="built_in">exp</span>&gt;)| a | b | c</span><br></pre></td></tr></table></figure>
@@ -208,12 +208,12 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">exp</span>&gt; → &lt;<span class="built_in">exp</span>&gt; + &lt;mulexp&gt; | &lt;mulexp&gt;</span><br><span class="line">&lt;mulexp&gt; → &lt;mulexp&gt; * &lt;rootexp&gt; | &lt;rootexp&gt;</span><br><span class="line">&lt;rootexp&gt; → (&lt;<span class="built_in">exp</span>&gt;)| a | b | c</span><br></pre></td></tr></table></figure>
 
 <p>这是一个左结合的语法。</p>
-<p><img src="/blogs/image-20200114152022613.png" alt="image-20200114152022613"></p>
+<p><img src="image-20200114152022613.png" alt="image-20200114152022613"></p>
 <h3 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h3><p>假设有语法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;stmt&gt; → &lt;<span class="keyword">if</span>-stmt&gt; | s1 | s2</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt; <span class="keyword">else</span> &lt;stmt&gt;</span><br><span class="line">           | <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt;</span><br><span class="line">&lt;expr&gt; → e1 | e2 </span><br></pre></td></tr></table></figure>
 
 <p>会带来歧义：考虑 <code>if e1 then if e2 then s1 else s2</code>, 两种生成树</p>
-<p><img src="/blogs/image-20200114152423993.png" alt="image-20200114152423993"></p>
+<p><img src="image-20200114152423993.png" alt="image-20200114152423993"></p>
 <p>修改语法为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;full-stmt&gt; → &lt;full-<span class="keyword">if</span>&gt; | s1 | s2</span><br><span class="line">&lt;full-<span class="keyword">if</span>&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;full-stmt&gt; <span class="keyword">else</span> &lt;full-stmt&gt;</span><br><span class="line">&lt;stmt&gt; → &lt;<span class="keyword">if</span>-stmt&gt; | s1 | s2</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;full-stmt&gt; <span class="keyword">else</span> &lt;stmt&gt;</span><br><span class="line">           | <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt;</span><br><span class="line">&lt;expr&gt; → e1 | e2 </span><br></pre></td></tr></table></figure>
 
@@ -224,8 +224,7 @@
 <p>EBNF被广泛用作定义编程语言的事实标准。</p>
 <h5 id="常见语法"><a href="#常见语法" class="headerlink" title="常见语法"></a>常见语法</h5><ol>
 <li><p>[] 表示可选部分</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BNF:</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt; <span class="keyword">else</span> &lt;stmt&gt;</span><br><span class="line">           | <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt;</span><br><span class="line">EBNF:</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt; [<span class="keyword">else</span> &lt;stmt&gt;]</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BNF:</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt; <span class="keyword">else</span> &lt;stmt&gt;</span><br><span class="line">           | <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt;</span><br><span class="line">EBNF:</span><br><span class="line">&lt;<span class="keyword">if</span>-stmt&gt; → <span class="keyword">if</span> &lt;expr&gt; then &lt;stmt&gt; [<span class="keyword">else</span> &lt;stmt&gt;]</span><br></pre></td></tr></table></figure></li>
 <li><p>{} 表示括起来部分可以重复无数次或整体省去</p>
 </li>
 <li><p>可以用 ()  表示在其中选择其中一个元素</p>
@@ -238,7 +237,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BNF:</span><br><span class="line">&lt;id&gt; →  &lt;letter&gt; | &lt;id&gt;&lt;letter&gt; | &lt;id&gt;&lt;digit&gt; </span><br><span class="line">EBNF:</span><br><span class="line">&lt;id&gt; → &lt;letter&gt; (&lt;letter&gt; |  &lt;digit&gt;)* </span><br></pre></td></tr></table></figure>
 
 <p>似曾相识emmm </p>
-<h5 id="EBNF-表示-Lisp-语法"><a href="#EBNF-表示-Lisp-语法" class="headerlink" title="EBNF 表示 Lisp 语法"></a>EBNF 表示 Lisp 语法</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s_expression → <span class="type">atomic_symbol</span> </span><br><span class="line">    | <span class="string">&quot;(&quot;</span> s_expression <span class="string">&quot;.&quot;</span> s_expression <span class="string">&quot;)&quot;</span> </span><br><span class="line">    | <span class="built_in">list</span> </span><br><span class="line"><span class="built_in">list</span> → <span class="string">&quot;(&quot;</span> s_expression* <span class="string">&quot;)&quot;</span> </span><br><span class="line"><span class="type">atomic_symbol</span> → letter atom_part </span><br><span class="line">atom_part → empty </span><br><span class="line">    | letter atom_part </span><br><span class="line">    | number atom_part </span><br><span class="line">letter → <span class="string">&quot;a&quot;</span> | <span class="string">&quot;b&quot;</span> | <span class="string">&quot; ...&quot;</span> | <span class="string">&quot;z&quot;</span> </span><br><span class="line">number → <span class="string">&quot;1&quot;</span> | <span class="string">&quot;2&quot;</span> | <span class="string">&quot; ...&quot;</span> | <span class="string">&quot;9&quot;</span> </span><br></pre></td></tr></table></figure>
+<h5 id="EBNF-表示-Lisp-语法"><a href="#EBNF-表示-Lisp-语法" class="headerlink" title="EBNF 表示 Lisp 语法"></a>EBNF 表示 Lisp 语法</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s_expression → atomic_symbol </span><br><span class="line">    | <span class="string">&quot;(&quot;</span> s_expression <span class="string">&quot;.&quot;</span> s_expression <span class="string">&quot;)&quot;</span> </span><br><span class="line">    | <span class="built_in">list</span> </span><br><span class="line"><span class="built_in">list</span> → <span class="string">&quot;(&quot;</span> s_expression* <span class="string">&quot;)&quot;</span> </span><br><span class="line">atomic_symbol → letter atom_part </span><br><span class="line">atom_part → empty </span><br><span class="line">    | letter atom_part </span><br><span class="line">    | number atom_part </span><br><span class="line">letter → <span class="string">&quot;a&quot;</span> | <span class="string">&quot;b&quot;</span> | <span class="string">&quot; ...&quot;</span> | <span class="string">&quot;z&quot;</span> </span><br><span class="line">number → <span class="string">&quot;1&quot;</span> | <span class="string">&quot;2&quot;</span> | <span class="string">&quot; ...&quot;</span> | <span class="string">&quot;9&quot;</span> </span><br></pre></td></tr></table></figure>
 
 
 
